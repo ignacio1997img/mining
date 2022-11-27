@@ -29,7 +29,7 @@ class SignaturesTableSeeder extends Seeder
                 'status' => 1,
                 'created_at' => '2022-11-26 21:52:11',
                 'updated_at' => '2022-11-26 21:52:11',
-                'registerUser_id' => 2,
+                'registerUser_id' => 1,
                 'deleted_at' => NULL,
             ),
         ));
