@@ -23,17 +23,17 @@ class MenuItemsTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'menu_id' => 1,
-                'title' => 'Dashboard',
+                'title' => 'Inicio',
                 'url' => '',
                 'target' => '_self',
-                'icon_class' => 'voyager-boat',
-                'color' => NULL,
+                'icon_class' => 'fa-solid fa-house',
+                'color' => '#000000',
                 'parent_id' => NULL,
                 'order' => 1,
                 'created_at' => '2022-11-25 13:39:03',
-                'updated_at' => '2022-11-25 13:39:03',
+                'updated_at' => '2023-05-30 14:01:00',
                 'route' => 'voyager.dashboard',
-                'parameters' => NULL,
+                'parameters' => 'null',
             ),
             1 => 
             array (

@@ -961,7 +961,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 0,
                 'details' => '{"validation":{"rule":"max:191"},"display":{"width":12}}',
-                'order' => 7,
+                'order' => 8,
             ),
             59 => 
             array (
@@ -977,7 +977,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 0,
                 'details' => '{"validation":{"rule":"max:191"},"display":{"width":12}}',
-                'order' => 6,
+                'order' => 7,
             ),
             60 => 
             array (
@@ -1025,7 +1025,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 0,
                 'details' => '{"validation":{"rule":"max:191"},"display":{"width":6}}',
-                'order' => 8,
+                'order' => 9,
             ),
             63 => 
             array (
@@ -1041,7 +1041,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{"on":"Activo","off":"Inactivo","checked":true}',
-                'order' => 9,
+                'order' => 10,
             ),
             64 => 
             array (
@@ -1057,7 +1057,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{}',
-                'order' => 10,
+                'order' => 11,
             ),
             65 => 
             array (
@@ -1073,7 +1073,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{}',
-                'order' => 11,
+                'order' => 12,
             ),
             66 => 
             array (
@@ -1089,7 +1089,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 0,
                 'details' => '{"validation":{"rule":"max:191"},"display":{"width":4}}',
-                'order' => 12,
+                'order' => 13,
             ),
             67 => 
             array (
@@ -1105,7 +1105,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{}',
-                'order' => 13,
+                'order' => 14,
             ),
             68 => 
             array (
@@ -1266,6 +1266,22 @@ class DataRowsTableSeeder extends Seeder
                 'delete' => 0,
                 'details' => '{"validation":{"rule":"required|max:191"},"display":{"width":4}}',
                 'order' => 2,
+            ),
+            78 => 
+            array (
+                'id' => 111,
+                'data_type_id' => 13,
+                'field' => 'phone',
+                'type' => 'text',
+                'display_name' => 'Celular',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"validation":{"rule":"required|max:191"},"display":{"width":4}}',
+                'order' => 6,
             ),
         ));
         

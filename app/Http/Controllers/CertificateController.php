@@ -65,7 +65,7 @@ class CertificateController extends Controller
             ->where('deleted_at', null)->where('id', $id)->first();
 
 
-        Http::get('http://api.what.capresi.net/?number=591'.$certificate->company->phone.'&message=Hola *'.$certificate->company->representative.'*.%0A%0A*GADBENI* %0A%0APara poder descargar su certificado *CODIGO OPERADOR MINERO*%0A%0AHas clic en el enlace de abajo.%0A👇👇%0Ahttps://mineria.beni.gob.bo/admin/certificates/'.$id.'/print');
+        Http::get('http://api.what.capresi.net/?number=591'.$certificate->company->phone.'&message=Hola *'.$certificate->company->representative.'*.%0A%0A*GADBENI* %0A%0APara poder descargar su certificado *CODIGO OPERADOR MINERO*%0A%0AHas clic en el enlace de abajo.%0A👇👇%0Ahttps://mineria.beni.gob.bo/certificates/'.$id.'/print');
 
             // return $certificate;
         return view('certificates.print',compact('certificate'));
