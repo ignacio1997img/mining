@@ -11,6 +11,8 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
+use Barryvdh\DomPDF\Facade\Pdf;
+// use PDF
 
 class CertificateController extends Controller
 {
@@ -40,7 +42,7 @@ class CertificateController extends Controller
             }
             $code = Code::create(['code'=>$request->code, 'initials' => 'EMCC', 'registerUser_id'=>Auth::user()->id]);
             // return 1;
-            Certificate::create([
+            $cert = Certificate::create([
                 'company_id'=>$request->company_id,
                 'signature_id'=>$request->signature_id,
                 'code_id'=>$code->id,
@@ -48,6 +50,11 @@ class CertificateController extends Controller
                 'dateFinish'=>$request->dateFinish,
                 'registerUser_id'=>Auth::user()->id
             ]);
+
+            $certificate = Certificate::with(['company', 'signature', 'code'])
+            ->where('deleted_at', null)->where('id', $cert->id)->first();
+
+            Http::get('http://api.what.capresi.net/?number=591'.$certificate->company->phone.'&message=Hola *'.$certificate->company->representative.'*.%0A%0A*GADBENI* %0A%0APara poder descargar su certificado *CODIGO OPERADOR MINERO*%0A%0AHas clic en el enlace de abajo.%0A👇👇%0Ahttps://mineria.beni.gob.bo/certificates/'.$id.'/print');
 
             DB::commit();
             return redirect()->route('certificates.index')->with(['message' => 'Registrado exitosamente.', 'alert-type' => 'success']);
@@ -61,14 +68,21 @@ class CertificateController extends Controller
 
     public function print($id)
     {
+        // return $id;
         $certificate = Certificate::with(['company', 'signature', 'code'])
             ->where('deleted_at', null)->where('id', $id)->first();
 
-
-        Http::get('http://api.what.capresi.net/?number=591'.$certificate->company->phone.'&message=Hola *'.$certificate->company->representative.'*.%0A%0A*GADBENI* %0A%0APara poder descargar su certificado *CODIGO OPERADOR MINERO*%0A%0AHas clic en el enlace de abajo.%0A👇👇%0Ahttps://mineria.beni.gob.bo/certificates/'.$id.'/print');
+        // return $certificate;
 
             // return $certificate;
-        return view('certificates.print',compact('certificate'));
+        // return view('certificates.print',compact('certificate'));
+
+
+        // $people = Person::where('id', $id)->where('deleted_at', null)->first();
+
+        return PDF::loadView('certificates.print',compact('certificate') )
+        ->setPaper('A4', 'landscape')
+        ->stream('CERTIFICADO.pdf');
     }
 
     public function destroy($id)
