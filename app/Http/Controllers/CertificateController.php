@@ -54,14 +54,15 @@ class CertificateController extends Controller
             $certificate = Certificate::with(['company', 'signature', 'code'])
             ->where('deleted_at', null)->where('id', $cert->id)->first();
 
-            Http::get('http://api.what.capresi.net/?number=591'.$certificate->company->phone.'&message=Hola *'.$certificate->company->representative.'*.%0A%0A*GADBENI* %0A%0APara poder descargar su certificado *CODIGO OPERADOR MINERO*%0A%0AHas clic en el enlace de abajo.%0A👇👇%0Ahttps://mineria.beni.gob.bo/certificates/'.$id.'/print');
+            // return $certificate;
+            Http::get('http://api.what.capresi.net/?number=591'.$certificate->company->phone.'&message=Hola *'.$certificate->company->representative.'*.%0A%0A*GADBENI* %0A%0APara poder descargar su certificado *CODIGO OPERADOR MINERO*%0A%0AHas clic en el enlace de abajo.%0A👇👇%0Ahttps://mineria.beni.gob.bo/certificates/'.$certificate->id.'/print');
 
             DB::commit();
             return redirect()->route('certificates.index')->with(['message' => 'Registrado exitosamente.', 'alert-type' => 'success']);
 
         } catch (\Throwable $th) {
             DB::rollBack();
-            // return 0;
+            return 0;
             return redirect()->route('certificates.create')->with(['message' => 'Ocurrió un error.', 'alert-type' => 'error']);
         }
     }
