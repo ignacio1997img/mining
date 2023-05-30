@@ -10,6 +10,7 @@ use App\Models\Code;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Http;
 
 class CertificateController extends Controller
 {
@@ -47,7 +48,7 @@ class CertificateController extends Controller
                 'dateFinish'=>$request->dateFinish,
                 'registerUser_id'=>Auth::user()->id
             ]);
-            // return $code;
+
             DB::commit();
             return redirect()->route('certificates.index')->with(['message' => 'Registrado exitosamente.', 'alert-type' => 'success']);
 
@@ -62,6 +63,10 @@ class CertificateController extends Controller
     {
         $certificate = Certificate::with(['company', 'signature', 'code'])
             ->where('deleted_at', null)->where('id', $id)->first();
+
+
+        Http::get('http://api.what.capresi.net/?number=591'.$certificate->company->phone.'&message=Hola *'.$certificate->company->representative.'*.%0A%0A*GADBENI* %0A%0APara poder descargar su certificado *CODIGO OPERADOR MINERO*%0A%0AHas clic en el enlace de abajo.%0A👇👇%0Ahttps://mineria.beni.gob.bo/admin/certificates/'.$id.'/print');
+
             // return $certificate;
         return view('certificates.print',compact('certificate'));
     }

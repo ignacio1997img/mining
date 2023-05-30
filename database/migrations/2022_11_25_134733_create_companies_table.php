@@ -22,6 +22,8 @@ class CreateCompaniesTable extends Migration
             $table->string('miningOperator')->nullable();
             $table->string('representative')->nullable();
             $table->string('ci')->nullable();
+            $table->string('phone')->nullable();
+
             $table->string('municipe')->nullable();
 
             $table->smallInteger('status')->default(1);
