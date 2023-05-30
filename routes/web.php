@@ -21,13 +21,19 @@ Route::get('/', function () {
     return redirect('admin');
 });
 
+Route::get('certificates/{id?}/print', [CertificateController::class, 'print'])->name('certificates.print');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 
     Route::resource('certificates', CertificateController::class);
-    Route::get('certificates/{id?}/print', [CertificateController::class, 'print'])->name('certificates.print');
 
     Route::get('ajax/certificates/code/{code?}', [AjaxController::class, 'code'])->name('ajax-certificate.code');
 
 });
+
+Route::get('/admin/clear-cache', function() {
+    Artisan::call('optimize:clear');
+    return redirect('/admin')->with(['message' => 'Cache eliminada.', 'alert-type' => 'success']);
+})->name('clear.cache');
+
