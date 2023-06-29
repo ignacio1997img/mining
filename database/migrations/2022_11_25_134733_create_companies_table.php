@@ -18,6 +18,8 @@ class CreateCompaniesTable extends Migration
             $table->string('nit')->nullable();
             $table->string('nim')->nullable();
             
+            $table->string('razon')->nullable();
+
             $table->text('activity')->nullable();
             $table->string('miningOperator')->nullable();
             $table->string('representative')->nullable();

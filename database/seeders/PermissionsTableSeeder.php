@@ -46,7 +46,7 @@ class PermissionsTableSeeder extends Seeder
 
 
 
-        // Permission::generateFor('signatures');
+        Permission::generateFor('form101s');
 
         // Permission::generateFor('companies');
         $keys = [

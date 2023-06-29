@@ -928,7 +928,7 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 0,
-                'details' => '{"validation":{"rule":"max:191"},"display":{"width":4}}',
+                'details' => '{"validation":{"rule":"max:191|unique:companies"},"display":{"width":4}}',
                 'order' => 2,
             ),
             57 => 
@@ -960,8 +960,8 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 0,
-                'details' => '{"validation":{"rule":"max:191"},"display":{"width":12}}',
-                'order' => 8,
+                'details' => '{"validation":{"rule":"max:191"},"display":{"width":8}}',
+                'order' => 9,
             ),
             59 => 
             array (
@@ -969,15 +969,15 @@ class DataRowsTableSeeder extends Seeder
                 'data_type_id' => 13,
                 'field' => 'miningOperator',
                 'type' => 'text',
-                'display_name' => 'Operador Minero',
+                'display_name' => 'Codigo Operador Minero',
                 'required' => 0,
                 'browse' => 1,
                 'read' => 1,
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 0,
-                'details' => '{"validation":{"rule":"max:191"},"display":{"width":12}}',
-                'order' => 7,
+                'details' => '{"validation":{"rule":"max:191"},"display":{"width":4}}',
+                'order' => 4,
             ),
             60 => 
             array (
@@ -992,8 +992,8 @@ class DataRowsTableSeeder extends Seeder
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 0,
-                'details' => '{"validation":{"rule":"max:191"},"display":{"width":12}}',
-                'order' => 5,
+                'details' => '{"validation":{"rule":"max:191"},"display":{"width":8}}',
+                'order' => 7,
             ),
             61 => 
             array (
@@ -1009,7 +1009,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 0,
                 'details' => '{"validation":{"rule":"max:191"},"display":{"width":4}}',
-                'order' => 4,
+                'order' => 6,
             ),
             62 => 
             array (
@@ -1025,7 +1025,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 0,
                 'details' => '{"validation":{"rule":"max:191"},"display":{"width":6}}',
-                'order' => 9,
+                'order' => 10,
             ),
             63 => 
             array (
@@ -1041,7 +1041,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{"on":"Activo","off":"Inactivo","checked":true}',
-                'order' => 10,
+                'order' => 11,
             ),
             64 => 
             array (
@@ -1057,7 +1057,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{}',
-                'order' => 11,
+                'order' => 12,
             ),
             65 => 
             array (
@@ -1073,7 +1073,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{}',
-                'order' => 12,
+                'order' => 13,
             ),
             66 => 
             array (
@@ -1089,7 +1089,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 0,
                 'details' => '{"validation":{"rule":"max:191"},"display":{"width":4}}',
-                'order' => 13,
+                'order' => 14,
             ),
             67 => 
             array (
@@ -1105,7 +1105,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{}',
-                'order' => 14,
+                'order' => 15,
             ),
             68 => 
             array (
@@ -1281,6 +1281,118 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 0,
                 'details' => '{"validation":{"rule":"required|max:191"},"display":{"width":4}}',
+                'order' => 8,
+            ),
+            79 => 
+            array (
+                'id' => 112,
+                'data_type_id' => 13,
+                'field' => 'razon',
+                'type' => 'text',
+                'display_name' => 'Razon Social',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"validation":{"rule":"max:255"},"display":{"width":12}}',
+                'order' => 5,
+            ),
+            80 => 
+            array (
+                'id' => 113,
+                'data_type_id' => 19,
+                'field' => 'id',
+                'type' => 'text',
+                'display_name' => 'Id',
+                'required' => 1,
+                'browse' => 1,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{}',
+                'order' => 1,
+            ),
+            81 => 
+            array (
+                'id' => 114,
+                'data_type_id' => 19,
+                'field' => 'symbol',
+                'type' => 'text',
+                'display_name' => 'Simbolo',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"validation":{"rule":"required|max:191"},"display":{"width":4}}',
+                'order' => 2,
+            ),
+            82 => 
+            array (
+                'id' => 115,
+                'data_type_id' => 19,
+                'field' => 'name',
+                'type' => 'text',
+                'display_name' => 'Mineral',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"validation":{"rule":"required|max:191|unique:type_minerals"},"display":{"width":4}}',
+                'order' => 3,
+            ),
+            83 => 
+            array (
+                'id' => 116,
+                'data_type_id' => 19,
+                'field' => 'created_at',
+                'type' => 'timestamp',
+                'display_name' => 'Creado',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{}',
+                'order' => 4,
+            ),
+            84 => 
+            array (
+                'id' => 117,
+                'data_type_id' => 19,
+                'field' => 'updated_at',
+                'type' => 'timestamp',
+                'display_name' => 'Updated At',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{}',
+                'order' => 5,
+            ),
+            85 => 
+            array (
+                'id' => 118,
+                'data_type_id' => 19,
+                'field' => 'deleted_at',
+                'type' => 'timestamp',
+                'display_name' => 'Deleted At',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{}',
                 'order' => 6,
             ),
         ));

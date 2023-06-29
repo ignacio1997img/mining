@@ -3,6 +3,7 @@
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\Form101Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,7 +29,17 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::resource('certificates', CertificateController::class);
 
+
+    Route::get('companies/ajax/list', [CompanyController::class, 'ajaxCompany']);//para obtener las personas o clientes para darles u prestamos
+
+
     Route::get('ajax/certificates/code/{code?}', [AjaxController::class, 'code'])->name('ajax-certificate.code');
+
+
+    Route::resource('form101s', Form101Controller::class);
+    Route::get('form101s/ajax/list/{search?}', [Form101Controller::class, 'list']);//Para generar la lista en el index
+    Route::get('form101s/prinf/{form?}', [Form101Controller::class, 'prinf'])->name('form101s.prinf');
+
 
 });
 

@@ -143,7 +143,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2022-11-25 15:44:39',
-                'updated_at' => '2023-05-30 14:26:36',
+                'updated_at' => '2023-06-27 13:31:47',
             ),
             7 => 
             array (
@@ -162,6 +162,24 @@ class DataTypesTableSeeder extends Seeder
                 'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
                 'created_at' => '2022-11-25 16:23:40',
                 'updated_at' => '2022-11-26 21:23:23',
+            ),
+            8 => 
+            array (
+                'id' => 19,
+                'name' => 'type_minerals',
+                'slug' => 'type-minerals',
+                'display_name_singular' => 'Tipo de Mineral',
+                'display_name_plural' => 'Tipos de Minerales',
+                'icon' => 'fa-solid fa-coins',
+                'model_name' => 'App\\Models\\TypeMineral',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null,"order_direction":"asc","default_search_key":null,"scope":null}',
+                'created_at' => '2023-06-29 14:14:56',
+                'updated_at' => '2023-06-29 14:19:25',
             ),
         ));
         

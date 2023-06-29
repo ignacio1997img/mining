@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateCompanyTable extends Migration
+class CreateTypeMineralsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class UpdateCompanyTable extends Migration
      */
     public function up()
     {
-        Schema::table('companies', function (Blueprint $table) {
-            $table->string('phone')->nullable();
+        Schema::create('type_minerals', function (Blueprint $table) {
+            $table->id();
+            $table->string('symbol')->nullable();
+            $table->string('name')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -25,6 +29,6 @@ class UpdateCompanyTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('type_minerals');
     }
 }
