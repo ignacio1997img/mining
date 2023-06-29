@@ -44,10 +44,10 @@
             
                 
                     <td class="no-sort no-click bread-actions text-right">
-                        <a href="{{route('form101s.prinf', ['form'=>$item->id])}}" title="Imprimir" class="btn btn-sm btn-success" data-toggle="modal">
+                        <a href="{{route('form101s.prinf', ['form'=>$item->id])}}" target="_blank" title="Imprimir" class="btn btn-sm btn-success" data-toggle="modal">
                             <i class="fa-solid fa-print"></i>
                         </a>
-                        <button title="Borrar" class="btn btn-sm btn-danger delete" onclick="deleteItem('{{ route('form101s.destroy', ['form101' => $item->id]) }}')" data-toggle="modal" data-target="#delete-modal">
+                        <button title="Borrar" class="btn btn-sm btn-danger delete" onclick="deleteItem('{{ route('form101s.destroy', ['form101' => $item->id]) }}')" data-toggle="modal" data-target="#myModalEliminar">
                             <i class="voyager-trash"></i> <span class="hidden-xs hidden-sm">Borrar</span>
                         </button>
                     </td>

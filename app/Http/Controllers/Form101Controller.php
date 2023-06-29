@@ -8,6 +8,7 @@ use App\Models\TypeMineral;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
 
 class Form101Controller extends Controller
 {
@@ -83,5 +84,21 @@ class Form101Controller extends Controller
 
         return view('form101.prinf', compact('forms'));
 
+    }
+
+    public function destroy($id)
+    {
+        // return $id;
+        DB::beginTransaction();
+        try {
+            Form101::where('id', $id)->update(['deleted_at'=>Carbon::now(), 'deleted_id'=>Auth::user()->id]);
+            DB::commit();
+            return redirect()->route('form101s.index')->with(['message' => 'Eliminado exitosamente.', 'alert-type' => 'success']);
+
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            return 0;
+            return redirect()->route('form101s.create')->with(['message' => 'Ocurrió un error.', 'alert-type' => 'error']);
+        }
     }
 }

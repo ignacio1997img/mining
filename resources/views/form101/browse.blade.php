@@ -57,7 +57,9 @@
     <div class="modal modal-danger fade" tabindex="-1" id="myModalEliminar" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
-               
+                <form action="#" id="delete_form" method="POST">
+                    {{ method_field('DELETE') }}
+                    {{ csrf_field() }}
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title"><i class="voyager-trash"></i> Desea eliminar el siguiente ingreso?</h4>
@@ -75,6 +77,7 @@
                 <div class="modal-footer">
                     
                         <input type="submit" class="btn btn-danger pull-right delete-confirm" value="Sí, eliminar">
+                    </form>
                     
                     <button type="button" class="btn btn-default pull-right" data-dismiss="modal">Cancelar</button>
                 </div>
@@ -142,14 +145,11 @@
 
         }
 
-        $('#myModalEliminar').on('show.bs.modal', function (event) {
-            var button = $(event.relatedTarget) //captura valor del data-empresa=""
+        function deleteItem(url){
+                $('#delete_form').attr('action', url);
+        }
 
-            var id = button.data('id')
 
-            var modal = $(this)
-            modal.find('.modal-body #id').val(id)                    
-        });
         
        
     </script>
