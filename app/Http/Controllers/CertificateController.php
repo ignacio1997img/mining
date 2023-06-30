@@ -82,7 +82,7 @@ class CertificateController extends Controller
         // $people = Person::where('id', $id)->where('deleted_at', null)->first();
 
         return PDF::loadView('certificates.print',compact('certificate') )
-        ->setPaper('A4', 'landscape')
+        ->setPaper('A4')
         ->stream('CERTIFICADO.pdf');
     }
 
