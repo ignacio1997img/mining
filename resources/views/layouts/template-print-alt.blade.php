@@ -43,14 +43,14 @@
             position: relative;
             width: 450px;
         }
-        @media print{
+        /* @media print{
             .hide-print{
                 display: none
             }
             .content{
                 padding: 0px 0px
             }
-        }
+        } */
     </style>
     @yield('css')
 </head>
