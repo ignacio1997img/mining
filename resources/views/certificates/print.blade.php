@@ -79,7 +79,7 @@
                 <br>
                 <b style="text-transform: uppercase;">{{$certificate->signature->job}}</b>
             </td>
-            <td style="text-align: right; width:32%">
+            <td style="text-align: right; width:32%">dgdf
                 {!! QrCode::size(120)->generate('CODIGO: '.str_pad($certificate->code->code, 7, "0", STR_PAD_LEFT).'-'.$certificate->code->initials.', OPERADOR MINERO: '.$certificate->company->miningOperator.', NIT: '.$certificate->company->nit.', NIM: '.$certificate->company->nim.', ACTIVIDAD: '.$certificate->company->activity.', REPRESENTANTE LEGAL: '.$certificate->company->representative.
             ', CEDULA DE IDENTIDAD: '.$certificate->company->ci.', MUNICIPIO: '.$certificate->company->municipe.', VALIDO HASTA: '.date("d-m-Y", strtotime($certificate->dateFinish)).', FECHA DE EMISION: '.date("d-m-Y", strtotime($certificate->dateStart))); !!}
             </td>
