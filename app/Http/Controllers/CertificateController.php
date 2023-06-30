@@ -76,7 +76,7 @@ class CertificateController extends Controller
         // return $certificate;
 
             // return $certificate;
-        // return view('certificates.print',compact('certificate'));
+        return view('certificates.print',compact('certificate'));
 
 
         // $people = Person::where('id', $id)->where('deleted_at', null)->first();
