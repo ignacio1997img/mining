@@ -48,7 +48,7 @@ class PermissionsTableSeeder extends Seeder
 
         Permission::generateFor('form101s');
 
-        // Permission::generateFor('companies');
+        Permission::generateFor('type_minerals');
         $keys = [
             'browse_signatures',
             'add_signatures',
