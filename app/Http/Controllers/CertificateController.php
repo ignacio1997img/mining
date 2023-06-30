@@ -55,7 +55,7 @@ class CertificateController extends Controller
             ->where('deleted_at', null)->where('id', $cert->id)->first();
 
             // return $certificate;
-            Http::get('http://whatsapp.tecnologiaweb.org/?number=591'.$certificate->company->phone.'&message=Hola *'.$certificate->company->representative.'*.%0A%0A*GADBENI* %0A%0APara poder descargar su certificado *CODIGO OPERADOR MINERO*%0A%0AHas clic en el enlace de abajo.%0A👇👇%0Ahttp://mineria.capresi.net/certificates/'.$certificate->id.'/print');
+            Http::get('https://whatsapp-api.beni.gob.bo/?number=591'.$certificate->company->phone.'&message=Hola *'.$certificate->company->representative.'*.%0A%0A*GADBENI* %0A%0APara poder descargar su certificado *CODIGO OPERADOR MINERO*%0A%0AHas clic en el enlace de abajo.%0A👇👇%0Ahttps://mineria.beni.gob.bo/certificates/'.$certificate->id.'/print');
 
             DB::commit();
             return redirect()->route('certificates.index')->with(['message' => 'Registrado exitosamente.', 'alert-type' => 'success']);
