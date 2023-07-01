@@ -14,7 +14,8 @@ class Certificate extends Model
     protected $fillable = [
         'company_id',
         'signature_id',
-        'code_id',
+        'miningOperator',
+        'code',
         'dateStart',
         'dateFinish',
         'status',

@@ -25,7 +25,7 @@
                                 <div class="row">
                                     <div class="form-group col-md-12">
                                         <small>Empresa / Compañia</small>
-                                        <select name="company_id" class="form-control" id="select_company" required></select>
+                                        <select name="certificate_id" class="form-control" id="select_company" required></select>
 
                                         {{-- <select name="company_id"  class="form-control select2" required>
                                             <option value="" disabled selected>-- Selecciona un tipo --</option>
@@ -230,7 +230,7 @@
                         productSelected = opt;
                         // alert(opt)
                         
-                        return opt.id?'<small>Nit: </small>'+opt.nit+'<small>, Razon Social: </small>'+opt.razon+'<small>, Representante: </small>'+opt.representative+'<small>, Actividad Social: </small>'+opt.activity:'<i class="fa fa-search"></i> Buscar... ';
+                        return opt.id?'<small style="font-size: 15px">'+opt.code+'</small>, <small>Nit: </small>'+opt.company.nit+'<small>, Razon Social: </small>'+opt.company.razon+'<small>, Representante: </small>'+opt.company.representative+'<small>, Actividad Social: </small>'+opt.company.activity:'<i class="fa fa-search"></i> Buscar... ';
                     }
                 }).change(function(){
                 
@@ -246,10 +246,11 @@
                 // Mostrar las opciones encontradas
                 return $(`  <div style="display: flex">
                                 <div>
-                                    <small>Nit: </small><b style="font-size: 15px; color: black">${option.nit}</b><br>
-                                    <small>Razon Social: </small><b style="font-size: 15px; color: black">${option.razon}</b><br>
-                                    <small>Representante: </small><b style="font-size: 15px; color: black">${option.representative}</b><br>
-                                    <small>Actividad Social: </small><b style="font-size: 15px; color: black">${option.activity}</b><br>
+                                    <small style="font-size: 15px">${option.code}</small><br>
+                                    <small>Nit: </small><b style="font-size: 15px; color: black">${option.company.nit}</b><br>
+                                    <small>Razon Social: </small><b style="font-size: 15px; color: black">${option.company.razon}</b><br>
+                                    <small>Representante: </small><b style="font-size: 15px; color: black">${option.company.representative}</b><br>
+                                    <small>Actividad Social: </small><b style="font-size: 15px; color: black">${option.company.activity}</b><br>
                                 </div>
                             </div>`);
             }

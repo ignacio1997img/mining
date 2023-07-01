@@ -11,7 +11,7 @@ class Form101 extends Model
 
     protected $fillable = [
         'code',
-        'company_id',
+        'certificate_id',
         'typeMineral_id',
         'leyMineral',
         'pesoBruto',
@@ -35,9 +35,9 @@ class Form101 extends Model
         'observation'
     ];
 
-    public function company()
+    public function certificate()
     {
-        return $this->belongsTo(Company::class, 'company_id');
+        return $this->belongsTo(Certificate::class, 'certificate_id');
     }
 
     public function typeMineral()

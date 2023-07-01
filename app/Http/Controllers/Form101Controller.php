@@ -24,11 +24,14 @@ class Form101Controller extends Controller
         $paginate = request('paginate') ?? 10;
 
      
-        $data = Form101::with(['company', 'typeMineral'])
+        $data = Form101::with(['certificate.company', 'typeMineral'])
                     ->where(function($query) use ($search){
                         if($search){
-                            $query->OrwhereHas('company', function($query) use($search){
+                            $query->OrwhereHas('certificate.company', function($query) use($search){
                                 $query->whereRaw("(razon like '%$search%' or representative like '%$search%' or nit like '%$search%')");
+                            })
+                            ->OrwhereHas('certificate', function($query) use($search){
+                                $query->whereRaw("(code like '%$search%')");
                             })
                             ->OrwhereHas('typeMineral', function($query) use($search){
                                 $query->whereRaw("(name like '%$search%')");
@@ -60,7 +63,7 @@ class Form101Controller extends Controller
             // return $request;
 
             $form = Form101::create($request->all());
-            $form->update(['code'=>str_pad($form->id, 6, "0", STR_PAD_LEFT), 'register_id'=>Auth::user()->id]);
+            $form->update(['code'=>'SDMEH-'.str_pad($form->id, 6, "0", STR_PAD_LEFT), 'register_id'=>Auth::user()->id]);
 
         
 
@@ -78,7 +81,7 @@ class Form101Controller extends Controller
     public function prinf($form)
     {
 
-        $forms = Form101::with(['company', 'typeMineral'])
+        $forms = Form101::with(['certificate.company', 'typeMineral'])
                     ->where('id', $form)->where('deleted_at', NULL)->orderBy('id', 'DESC')->first();
  
 

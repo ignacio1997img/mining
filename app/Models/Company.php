@@ -16,11 +16,11 @@ class Company extends Model
         'razon',
         'activity',
         'nim',
-        'miningOperator',
         'representative',
         'ci',
         'phone',
         'municipe',
+        'municipeMiningOperator',
         'status',
         'registerUser_id',
         'deleted_at'

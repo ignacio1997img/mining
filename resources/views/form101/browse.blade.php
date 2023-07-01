@@ -42,7 +42,7 @@
                             </div>
                             <div class="col-sm-2">
 
-                                <input type="text" class="form-control" placeholder="&#xF002; Buscar..." style="font-family:Arial, FontAwesome" />
+                                <input type="text" id="input-search" class="form-control" placeholder="&#xF002; Buscar..." style="font-family:Arial, FontAwesome" />
                             </div>
 
                             
@@ -112,6 +112,7 @@
             });
             
             $('#input-search').on('keyup', function(e){
+                // alert(2)
                 if(e.keyCode == 13) {
                     list();
                 }

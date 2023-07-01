@@ -31,12 +31,16 @@
                                         <small>Valido Hasta</small>
                                         <input type="date" name="dateFinish" class="form-control text" required>
                                     </div>   
-                                    <div class="form-group col-md-3">
+                                    {{-- <div class="form-group col-md-3">
                                         <small>Codigo de Certificado</small>
                                         <input type="number" name="code" id="code" style="text-align: right" onkeypress='return inputNumeric(event)' onchange="valCode()" onkeyup="valCode()" class="form-control text" required>
                                         <b class="text-danger" id="label-amount" style="display:none">El codigo ingresado ya existe..</b>
 
-                                    </div>   
+                                    </div>    --}}
+                                    {{-- <div class="form-group col-md-3">
+                                        <small>Código Operador Minero</small>
+                                        <input type="number" name="miningOperator" id="miningOperator" style="text-align: right" class="form-control text" required>
+                                    </div>    --}}
                                                                     
                                 </div>
                                 <div class="row">
@@ -71,7 +75,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12 text-right">
-                        <button type="submit" disabled id="btn-sumit" class="btn btn-primary">Guardar</button>
+                        <button type="submit" id="btn-sumit" class="btn btn-primary">Guardar</button>
                     </div>
                 </div>
                 
@@ -94,28 +98,28 @@
                 return false;        
             }
 
-            function valCode()
-            {
-                let cod = $(`#code`).val() ? parseFloat($(`#code`).val()) : 0;
-                $.get('{{route('ajax-certificate.code')}}/'+cod, function(data){
-                    // alert(data);
+            // function valCode()
+            // {
+            //     let cod = $(`#code`).val() ? parseFloat($(`#code`).val()) : 0;
+            //     $.get('{{route('ajax-certificate.code')}}/'+cod, function(data){
+            //         // alert(data);
 
-                    if(data)
-                    {
-                        $('#btn-sumit').attr('disabled', 'disabled');
-                        $('#label-amount').css('display', 'block');
-                    }
-                    else
-                    {
-                        $('#btn-sumit').removeAttr('disabled');
-                        $('#label-amount').css('display', 'none');
+            //         if(data)
+            //         {
+            //             $('#btn-sumit').attr('disabled', 'disabled');
+            //             $('#label-amount').css('display', 'block');
+            //         }
+            //         else
+            //         {
+            //             $('#btn-sumit').removeAttr('disabled');
+            //             $('#label-amount').css('display', 'none');
 
-                    }                   
+            //         }                   
                             
-                });
+            //     });
 
                 
-            }
+            // }
         </script>
     @stop
 

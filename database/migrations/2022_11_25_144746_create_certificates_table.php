@@ -17,7 +17,7 @@ class CreateCertificatesTable extends Migration
             $table->id();
             $table->foreignId('company_id')->nullable()->constrained('companies');
             $table->foreignId('signature_id')->nullable()->constrained('signatures');
-            $table->foreignId('code_id')->nullable()->constrained('codes');
+            $table->string('code')->nullable();
 
             $table->date('dateStart')->nullable();
             $table->date('dateFinish')->nullable();

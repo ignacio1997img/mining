@@ -23,8 +23,8 @@
                 <h3 style="margin-bottom: 0px; margin-top: 10px">
                     <div id="qr_code">
                         
-                        {!! QrCode::size(80)->generate('Numero de Formulario: '.$forms->code.', Numero COM: '.$forms->company->miningOperator.
-                        ', Numero NIM: '.$forms->company->nim.', Numero de NIT: '.$forms->company->nit.', Razon Social: '.$forms->company->razon.', Representante Legal: '.$forms->company->representative); !!}
+                        {!! QrCode::size(80)->generate('Numero de Formulario: '.$forms->code.', Numero COM: '.$forms->certificate->code.
+                        ', Numero NIM: '.$forms->certificate->company->nim.', Numero de NIT: '.$forms->certificate->company->nit.', Razon Social: '.$forms->certificate->company->razon.', Representante Legal: '.$forms->certificate->company->representative); !!}
                        
                     </div>
                     <small style="font-size: 8px; font-weight: 100">Impreso por: {{ Auth::user()->name }} <br> {{ date('d/m/Y H:i:s') }}</small>
@@ -55,9 +55,9 @@
         <tbody>
             <tr>
                 <td style="text-align: left; height:25px">{{$forms->code}}</td>
-                <td style="text-align: left; height:25px">{{$forms->company->miningOperator}}</td>
-                <td style="text-align: left; height:25px">{{$forms->company->nim}}</td>
-                <td style="text-align: left; height:25px">{{$forms->company->nit}}</td>
+                <td style="text-align: left; height:25px">{{$forms->certificate->code}}</td>
+                <td style="text-align: left; height:25px">{{$forms->certificate->company->nim}}</td>
+                <td style="text-align: left; height:25px">{{$forms->certificate->company->nit}}</td>
             </tr>
         </tbody>
     </table>
@@ -66,7 +66,7 @@
         <thead>
             <tr>
                 <th colspan="2" style="text-align: left; height:25px; height:25px">RAZON SOCIAL/NOMBRES Y APELLIDOS</th>
-                <td colspan="4" style="text-align: left; height:25px; height:25px">{{$forms->company->razon}} <br>{{$forms->company->representative}}
+                <td colspan="4" style="text-align: left; height:25px; height:25px">{{$forms->certificate->company->razon}} <br>{{$forms->certificate->company->representative}}
                 </td>
             </tr>
             <tr>
@@ -80,10 +80,10 @@
         </thead><tbody>
             <tr>
                 <td style="text-align: center; height:25px">{{$forms->typeMineral->name}}</td>
-                <td style="text-align: center; height:25px">{{$forms->leyMineral}}</td>
-                <td style="text-align: center; height:25px">{{$forms->pesoBruto}}</td>
-                <td style="text-align: center; height:25px">{{$forms->humedad}}</td>
-                <td style="text-align: center; height:25px">{{$forms->pesoNeto}}</td>
+                <td style="text-align: center; height:25px">{{$forms->leyMineral}} %</td>
+                <td style="text-align: center; height:25px">{{$forms->pesoBruto}} Kg</td>
+                <td style="text-align: center; height:25px">{{$forms->humedad}} %</td>
+                <td style="text-align: center; height:25px">{{$forms->pesoNeto}} Kg</td>
                 <td style="text-align: center; height:25px">{{$forms->lote}}</td>
             </tr>
         </tbody>

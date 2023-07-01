@@ -23,10 +23,11 @@
                         <table> 
                             <tr>
                                 <td>
-                                    <small>Nit:</small> {{ $item->company->nit }} <br>
-                                    <small>Razon Social:</small> {{ $item->company->razon }} <br>
-                                    <small>Representante:</small> {{ $item->company->representative }} <br>
-                                    <small>Actividad Social:</small> {{ $item->company->activity }} <br>
+                                    <small>{{ $item->certificate->code }}</small><br>
+                                    <small>Nit:</small> {{ $item->certificate->company->nit }} <br>
+                                    <small>Razon Social:</small> {{ $item->certificate->company->razon }} <br>
+                                    <small>Representante:</small> {{ $item->certificate->company->representative }} <br>
+                                    <small>Actividad Social:</small> {{ $item->certificate->company->activity }} <br>
                                 </td>
                             </tr>
                             

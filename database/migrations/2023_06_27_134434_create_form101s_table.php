@@ -16,7 +16,7 @@ class CreateForm101sTable extends Migration
         Schema::create('form101s', function (Blueprint $table) {
             $table->id();
             $table->string('code')->nullable();
-            $table->foreignId('company_id')->nullable()->constrained('companies');
+            $table->foreignId('certificate_id')->nullable()->constrained('certificates');
 
             $table->foreignId('typeMineral_id')->nullable()->constrained('type_minerals');
             $table->string('leyMineral')->nullable();
