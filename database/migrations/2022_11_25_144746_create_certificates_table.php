@@ -22,6 +22,8 @@ class CreateCertificatesTable extends Migration
             $table->date('dateStart')->nullable();
             $table->date('dateFinish')->nullable();
 
+            $table->string('miningOperator')->nullable();
+
             $table->smallInteger('status')->default(1);
             
             $table->timestamps();

@@ -21,7 +21,7 @@ class CreateCompaniesTable extends Migration
             $table->string('razon')->nullable();
 
             $table->text('activity')->nullable();
-            $table->string('miningOperator')->nullable();
+            // $table->string('miningOperator')->nullable();
             $table->string('representative')->nullable();
             $table->string('ci')->nullable();
             $table->string('phone')->nullable();
