@@ -9,9 +9,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
+use Barryvdh\DomPDF\Facade\Pdf;
+use Barryvdh\DomPDF\PDF as DomPDFPDF;
 
 class Form101Controller extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+
+
     public function index()
     {
 
@@ -85,7 +93,21 @@ class Form101Controller extends Controller
                     ->where('id', $form)->where('deleted_at', NULL)->orderBy('id', 'DESC')->first();
  
 
-        return view('form101.prinf', compact('forms'));
+        // return view('form101.prinf', compact('forms'));
+
+        // view()->share('forms', $forms);
+        // $pdf = PDF::loadView('form101.prinf',compact('forms'));
+
+        // return $pdf->download('Formulario 101.pdf');
+
+
+
+
+
+        return PDF::loadView('form101.prinf',compact('forms') )
+        // ->setPaper('A4', 'landscape')
+        ->setPaper('A4', 'portrait')
+        ->stream('Formulario 101.pdf');
 
     }
 
