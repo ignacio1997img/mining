@@ -68,7 +68,7 @@
         </tbody>
     </table>
     <br>
-    <table style="width: 100%; font-size: 10px" border="1" class="print-friendly" cellspacing="0" cellpadding="2">
+    <table style="font-size: 10px" border="1" class="print-friendly" cellspacing="0" cellpadding="2">
         <thead>
             <tr>
                 <th colspan="2" style="text-align: left; height:25px">RAZON SOCIAL/NOMBRES Y APELLIDOS</th>
