@@ -78,10 +78,10 @@
             <tr>
                 <th style="text-align: center; width: 20%; height:25px">TIPO DE MINERAL</th>
                 <th style="text-align: center; width: 20%; height:25px">LEY DE MINERAL</th>
-                <th style="text-align: center; width: 20%; height:25px">PESO BRUTO</th>
-                <th style="text-align: center; width: 20%; height:25px">HUMEDAD %</th>
-                <th style="text-align: center; width: 10%; height:25px">PESO NETO</th>
-                <th style="text-align: center; width: 10%; height:25px">LOTE</th>
+                <th style="text-align: center; width: 15%; height:25px">PESO BRUTO</th>
+                <th style="text-align: center; width: 15%; height:25px">HUMEDAD %</th>
+                <th style="text-align: center; width: 15%; height:25px">PESO NETO</th>
+                <th style="text-align: center; width: 15%; height:25px">LOTE</th>
             </tr>
         </thead>
         <tbody>
