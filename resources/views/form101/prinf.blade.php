@@ -71,17 +71,17 @@
     <table style="width: 100%; font-size: 10px" border="1" class="print-friendly" cellspacing="0" cellpadding="2">
         <thead>
             <tr>
-                <th colspan="2" style="text-align: left; height:25px; height:25px">RAZON SOCIAL/NOMBRES Y APELLIDOS</th>
-                <td colspan="4" style="text-align: left; height:25px; height:25px">{{$forms->certificate->company->razon}} <br>{{$forms->certificate->company->representative}}
+                <th colspan="2" style="text-align: left; height:25px">RAZON SOCIAL/NOMBRES Y APELLIDOS</th>
+                <td colspan="4" style="text-align: left; height:25px">{{$forms->certificate->company->razon}} <br>{{$forms->certificate->company->representative}}
                 </td>
             </tr>
             <tr>
-                <th style="text-align: center; width: 200px; height:25px">TIPO DE MINERAL</th>
-                <th style="text-align: center; width: 200px; height:25px">LEY DE MINERAL</th>
-                <th style="text-align: center; width: 200px; height:25px">PESO BRUTO</th>
-                <th style="text-align: center; width: 200px; height:25px">HUMEDAD %</th>
-                <th style="text-align: center; width: 200px; height:25px">PESO NETO</th>
-                <th style="text-align: center; width: 200px; height:25px">LOTE</th>
+                <th style="text-align: center; width: 20%; height:25px">TIPO DE MINERAL</th>
+                <th style="text-align: center; width: 20%; height:25px">LEY DE MINERAL</th>
+                <th style="text-align: center; width: 20%; height:25px">PESO BRUTO</th>
+                <th style="text-align: center; width: 20%; height:25px">HUMEDAD %</th>
+                <th style="text-align: center; width: 20%; height:25px">PESO NETO</th>
+                <th style="text-align: center; width: 20%; height:25px">LOTE</th>
             </tr>
         </thead><tbody>
             <tr>
