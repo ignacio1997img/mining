@@ -173,7 +173,7 @@
         <thead>
             <tr>
                 <th style="text-align: left;width: 20%; height:50px">OBSERVACIONES</th>
-                <td style="text-align: left;width: 200px; height:50px">{{$forms->observation}}</td>
+                <td style="text-align: left;width: 80; height:50px">{{$forms->observation}}</td>
             </tr>
         </thead>
     </table>
