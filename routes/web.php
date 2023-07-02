@@ -41,6 +41,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('form101s/prinf/{form?}', [Form101Controller::class, 'prinf'])->name('form101s.prinf');
 
 
+
+    // Route::get('download/log/{cad?}', [AjaxController::class, 'downloadLg'])->name('download.log');
 });
 
 Route::get('/admin/clear-cache', function() {

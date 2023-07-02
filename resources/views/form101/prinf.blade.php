@@ -3,7 +3,12 @@
 @section('page_title', 'Certificado')
 
 @section('content')
-<div id="">
+<div class="descarga" style="width: 90%; margin: auto;"> <a href="javascript:generateHTML2PDF()">DESCARGAR FORMULARIO</a></div>
+<div id="html2pdf" style="display: block; width: 90%; margin: auto;">
+    {{-- <div class="watermark1" id="watermark1">
+        <img src="{{ asset('images/icon.png') }}" /> 
+    </div> --}}
+    
     <table width="100%">
         <tr>
             <td style="width: 20%"><img src="{{ asset('images/icon.png') }}" alt="GADBENI" width="70px"></td>
@@ -184,5 +189,52 @@
         table.print-friendly tr td, table.print-friendly tr th {
             page-break-inside: avoid;
         }
+
+        #watermark1 {
+            width: 38%;
+            position: fixed;
+            top: 250px;
+            opacity: 0.1;
+            z-index:  -1;
+            text-align: center
+        }
+        #watermark1 img{
+            position: relative;
+            width: 400px;
+        }
+
     </style>
+@stop
+
+@section('script')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        function generateHTML2PDF() {       
+            var element = document.getElementById('html2pdf');
+            // document.getElementById('watermark1' ).style.display = 'block';
+            
+            var opt = {
+            margin:       0,
+            filename:     'formulario101.pdf',
+            image:        { type: 'jpeg', quality: 0.98 },
+            html2canvas:  { scale: 2 },
+            jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+
+            html2pdf().set(opt).from(element).save();
+            // html2pdf(element);
+
+
+        }
+        // document.getElementById('watermark1' ).style.display = 'none';
+
+
+        
+
+
+
+
+
+
+    </script>
 @stop

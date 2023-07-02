@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Barryvdh\DomPDF\Facade\Pdf;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 // use PDF
 
 class CertificateController extends Controller
@@ -82,13 +83,16 @@ class CertificateController extends Controller
 
         // return $certificate;
 
+        $qr = QrCode::size(120)->generate('CODIGO: '.$certificate->code.', OPERADOR MINERO: '.$certificate->company->miningOperator.', NIT: '.$certificate->company->nit.', NIM: '.$certificate->company->nim.', ACTIVIDAD: '.$certificate->company->activity.', REPRESENTANTE LEGAL: '.$certificate->company->representative.
+            ', CEDULA DE IDENTIDAD: '.$certificate->company->ci.', MUNICIPIO: '.$certificate->company->municipe.', VALIDO HASTA: '.date("d-m-Y", strtotime($certificate->dateFinish)).', FECHA DE EMISION: '.date("d-m-Y", strtotime($certificate->dateStart)));
+            
             // return $certificate;
-        return view('certificates.print',compact('certificate'));
+        // return view('certificates.print',compact('certificate'));
 
-
+ 
         // $people = Person::where('id', $id)->where('deleted_at', null)->first();
 
-        return PDF::loadView('certificates.print',compact('certificate') )
+        return PDF::loadView('certificates.print',compact('certificate', 'qr') )
         ->setPaper('A4', 'landscape')
         ->stream('CERTIFICADO.pdf');
     }

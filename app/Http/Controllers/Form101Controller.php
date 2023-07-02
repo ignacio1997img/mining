@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Carbon;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Barryvdh\DomPDF\PDF as DomPDFPDF;
+use App\Http\Controllers\HTML2PDF;
 
 class Form101Controller extends Controller
 {
@@ -91,9 +92,26 @@ class Form101Controller extends Controller
 
         $forms = Form101::with(['certificate.company', 'typeMineral'])
                     ->where('id', $form)->where('deleted_at', NULL)->orderBy('id', 'DESC')->first();
+
+
+
+                    // $html2pdf = new HTML2PDF('P', 'A4', 'es', true, 'UTF-8', 3);
+                    // $html2pdf->pdf->SetDisplayMode('fullpage');
+                    // $html2pdf->writeHTML($form, isset($_GET['vuehtml']));
+                    // $html2pdf->Output('PDF-CF.pdf');
+
+
+
+
+
+
+
+
+
+
  
 
-        // return view('form101.prinf', compact('forms'));
+        return view('form101.prinf', compact('forms'));
 
         // view()->share('forms', $forms);
         // $pdf = PDF::loadView('form101.prinf',compact('forms'));

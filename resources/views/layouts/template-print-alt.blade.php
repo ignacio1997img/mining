@@ -23,13 +23,13 @@
             padding: 5px 10px
         }
 
-        #borde {
+        /* #borde {
             border-color: rgb(26, 113, 2);
             border-width: 5px;
             border-style: solid;
             margin: 20px;
             padding: 20px;
-        }
+        } */
 
         #watermark {
             width: 100%;
@@ -47,6 +47,15 @@
             .hide-print{
                 display: none
             }
+            .descarga{
+                display: none
+            }
+
+            .watermark1{
+                display: none
+            }
+            
+
             .content{
                 padding: 0px 0px
             }
@@ -59,6 +68,7 @@
         <button class="btn-print" onclick="window.close()">Cancelar <i class="fa fa-close"></i></button>
         <button class="btn-print" onclick="window.print()"> Imprimir <i class="fa fa-print"></i></button>
     </div> --}}
+    
     <div id="watermark">
         <img src="{{ asset('images/icon.png') }}" /> 
     </div>
@@ -66,6 +76,7 @@
     <div class="content">
         @yield('content')
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script>
         document.body.addEventListener('keypress', function(e) {
