@@ -47,13 +47,7 @@
             .hide-print{
                 display: none
             }
-            .descarga{
-                display: none
-            }
-
-            .watermark1{
-                display: none
-            }
+           
             
 
             .content{

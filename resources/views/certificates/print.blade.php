@@ -5,15 +5,8 @@
 @section('content')
 {{-- <div class="descarga" style="width: 90%; margin: auto;"> <a href="javascript:generateHTML2PDF()">DESCARGAR CERTIFICADO</a></div> --}}
 <div id="html2pdf" >
-    <div id="watermark1" class="watermark1" style="display: none">
-        <img src="{{ asset('images/icon.png') }}" /> 
-    </div>
     <table width="100%">
-        <tr>            
-            {{-- <td style="text-align: center;  width:5%">
-                {!! QrCode::size(80)->generate('CODIGO: '.str_pad($certificate->code->code, 7, "0", STR_PAD_LEFT).'-'.$certificate->code->initials.', OPERADOR MINERO: '.$certificate->company->miningOperator.', NIT: '.$certificate->company->nit.', NIM: '.$certificate->company->nim.', ACTIVIDAD: '.$certificate->company->activity.', REPRESENTANTE LEGAL: '.$certificate->company->representative.
-            ', CEDULA DE IDENTIDAD: '.$certificate->company->ci.', MUNICIPIO: '.$certificate->company->municipe.', VALIDO HASTA: '.date("d-m-Y", strtotime($certificate->dateFinish)).', FECHA DE EMISION: '.date("d-m-Y", strtotime($certificate->dateStart))); !!}
-            </td> --}}
+        <tr>           
             <td style="text-align: center;  width:95%">
                 <h1 style="margin-bottom: 0px; margin-top: 5px; font-size: 35px">
                     GOBIERNO AUTONOMO DEPARTAMENTAL DEL BENI
@@ -53,7 +46,6 @@
             </td>
         </tr>
     </table>
-    <br>
     <br>
 
     {{-- <table width="100%">
@@ -123,20 +115,6 @@
             margin: 20px;
             padding: 20px;
         }
-
-        #watermark1 {
-            width: 45%;
-            position: fixed;
-            top: 200px;
-            opacity: 0.1;
-            z-index:  -1;
-            text-align: center
-        }
-        #watermark1 img{
-            position: relative;
-            width: 400px;
-        }
-
     </style>
 @stop
 

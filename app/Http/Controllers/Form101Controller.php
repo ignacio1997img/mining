@@ -12,6 +12,7 @@ use Illuminate\Support\Carbon;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Barryvdh\DomPDF\PDF as DomPDFPDF;
 use App\Http\Controllers\HTML2PDF;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class Form101Controller extends Controller
 {
@@ -100,8 +101,8 @@ class Form101Controller extends Controller
                     // $html2pdf->writeHTML($form, isset($_GET['vuehtml']));
                     // $html2pdf->Output('PDF-CF.pdf');
 
-
-
+        $qr = base64_encode(QrCode::size(80)->generate('Numero de Formulario: '.$forms->code.', Numero COM: '.$forms->certificate->code.', Numero NIM: '.$forms->certificate->company->nim.', Numero de NIT: '.$forms->certificate->company->nit.', Razon Social: '.$forms->certificate->company->razon.', Representante Legal: '.$forms->certificate->company->representative));
+                    
 
 
 
@@ -111,7 +112,7 @@ class Form101Controller extends Controller
 
  
 
-        return view('form101.prinf', compact('forms'));
+        // return view('form101.prinf', compact('forms'));
 
         // view()->share('forms', $forms);
         // $pdf = PDF::loadView('form101.prinf',compact('forms'));
@@ -122,7 +123,7 @@ class Form101Controller extends Controller
 
 
 
-        return PDF::loadView('form101.prinf',compact('forms') )
+        return PDF::loadView('form101.prinf',compact('forms', 'qr') )
         // ->setPaper('A4', 'landscape')
         ->setPaper('A4', 'portrait')
         ->stream('Formulario 101.pdf');

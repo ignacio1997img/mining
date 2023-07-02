@@ -3,8 +3,8 @@
 @section('page_title', 'Certificado')
 
 @section('content')
-<div class="descarga" style="width: 90%; margin: auto;"> <a href="javascript:generateHTML2PDF()">DESCARGAR FORMULARIO</a></div>
-<div id="html2pdf" style="display: block; width: 90%; margin: auto;">
+{{-- <div class="descarga" style="width: 90%; margin: auto;"> <a href="javascript:generateHTML2PDF()">DESCARGAR FORMULARIO</a></div> --}}
+<div id="html2pdf">
     {{-- <div class="watermark1" id="watermark1">
         <img src="{{ asset('images/icon.png') }}" /> 
     </div> --}}
@@ -27,9 +27,10 @@
             <td style="text-align: right; width:20%">
                 <h3 style="margin-bottom: 0px; margin-top: 10px">
                     <div id="qr_code">
+                        <img src="data:image/png;base64, {!! $qr !!}">
                         
-                        {!! QrCode::size(80)->generate('Numero de Formulario: '.$forms->code.', Numero COM: '.$forms->certificate->code.
-                        ', Numero NIM: '.$forms->certificate->company->nim.', Numero de NIT: '.$forms->certificate->company->nit.', Razon Social: '.$forms->certificate->company->razon.', Representante Legal: '.$forms->certificate->company->representative); !!}
+                        {{-- {!! QrCode::size(80)->generate('Numero de Formulario: '.$forms->code.', Numero COM: '.$forms->certificate->code.
+                        ', Numero NIM: '.$forms->certificate->company->nim.', Numero de NIT: '.$forms->certificate->company->nit.', Razon Social: '.$forms->certificate->company->razon.', Representante Legal: '.$forms->certificate->company->representative); !!} --}}
                        
                     </div>
                     <small style="font-size: 8px; font-weight: 100">Impreso por: {{ Auth::user()->name }} <br> {{ date('d/m/Y H:i:s') }}</small>
@@ -190,7 +191,7 @@
             page-break-inside: avoid;
         }
 
-        #watermark1 {
+        /* #watermark1 {
             width: 38%;
             position: fixed;
             top: 250px;
@@ -201,13 +202,13 @@
         #watermark1 img{
             position: relative;
             width: 400px;
-        }
+        } */
 
     </style>
 @stop
 
 @section('script')
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
         function generateHTML2PDF() {       
             var element = document.getElementById('html2pdf');
@@ -229,12 +230,6 @@
         // document.getElementById('watermark1' ).style.display = 'none';
 
 
-        
 
-
-
-
-
-
-    </script>
+    </script> --}}
 @stop
