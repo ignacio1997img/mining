@@ -120,10 +120,10 @@
     <table style="width: 100%; font-size: 10px" border="1" class="print-friendly" cellspacing="0" cellpadding="2">
         <thead>
             <tr>
-                <th style="text-align: center; width: 200px; height:25px">MEDIO DE TRANSPORTE</th>
-                <th style="text-align: center; width: 200px; height:25px">ORIGEN</th>
-                <th style="text-align: center; width: 200px; height:25px">INTERMEDIO FINAL</th>
-                <th style="text-align: center; width: 200px; height:25px">PLACA/MATRICULA</th>
+                <th style="text-align: center; width: 25%; height:25px">MEDIO DE TRANSPORTE</th>
+                <th style="text-align: center; width: 25%; height:25px">ORIGEN</th>
+                <th style="text-align: center; width: 25%; height:25px">INTERMEDIO FINAL</th>
+                <th style="text-align: center; width: 25%; height:25px">PLACA/MATRICULA</th>
             </tr>
         </thead>
         <tbody>
@@ -156,10 +156,10 @@
     <table style="width: 100%; font-size: 10px" border="1" class="print-friendly" cellspacing="0" cellpadding="2">
         <thead>
             <tr>
-                <th style="text-align: center;width: 200px; height:150px"></th>
-                <th style="text-align: center;width: 200px; height:150px"></th>
-                <th style="text-align: center;width: 200px; height:150px"></th>
-                <th rowspan="2" style="text-align: center;width: 200px; height:150px"><b style="color: rgb(160, 148, 148)">SELLO DE LA <br>S.D.M.E.H.B.</b></th>
+                <th style="text-align: center;width: 25%; height:150px"></th>
+                <th style="text-align: center;width: 25%; height:150px"></th>
+                <th style="text-align: center;width: 25%; height:150px"></th>
+                <th rowspan="2" style="text-align: center;width: 25%; height:150px"><b style="color: rgb(160, 148, 148)">SELLO DE LA <br>S.D.M.E.H.B.</b></th>
             </tr>
             <tr>
                 <th style="text-align: center; height:25px">SELLO DE LA EMPRESA</th>
