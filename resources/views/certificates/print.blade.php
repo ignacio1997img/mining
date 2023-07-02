@@ -88,9 +88,9 @@
                 <b style="text-transform: uppercase;">{{$certificate->signature->job}}</b>
             </td>
             <td style="text-align: right; width:32%">
-                {{-- <img src="data:image/png:base64{!! base64_encode($qr)!!}" alt=""> --}}
+                <img src="data:image/png:base64{!! base64_encode($qr)!!}" alt="">
                 {{-- <img src="data:image/svg+xml;base64,{{ base64_encode($qr) }}"> --}}
-                <img src="data:image/svg+xml;utf8, {{ $qr }}" />
+                {{-- <img src="data:image/svg+xml;utf8, {{ $qr }}" /> --}}
                 {{-- {!! QrCode::size(120)->generate('CODIGO: '.$certificate->code.', OPERADOR MINERO: '.$certificate->company->miningOperator.', NIT: '.$certificate->company->nit.', NIM: '.$certificate->company->nim.', ACTIVIDAD: '.$certificate->company->activity.', REPRESENTANTE LEGAL: '.$certificate->company->representative.
             ', CEDULA DE IDENTIDAD: '.$certificate->company->ci.', MUNICIPIO: '.$certificate->company->municipe.', VALIDO HASTA: '.date("d-m-Y", strtotime($certificate->dateFinish)).', FECHA DE EMISION: '.date("d-m-Y", strtotime($certificate->dateStart))); !!}
              --}}
