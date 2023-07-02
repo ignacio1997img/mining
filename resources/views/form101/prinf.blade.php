@@ -68,7 +68,7 @@
         </tbody>
     </table>
     <br>
-    <table style="width: 90%; font-size: 10px" border="1" class="print-friendly" cellspacing="0" cellpadding="2">
+    <table style="width: 100%; font-size: 10px" border="1" class="print-friendly" cellspacing="0" cellpadding="2">
         <thead>
             <tr>
                 <th colspan="2" style="text-align: left; height:25px">RAZON SOCIAL/NOMBRES Y APELLIDOS</th>
@@ -80,10 +80,11 @@
                 <th style="text-align: center; width: 20%; height:25px">LEY DE MINERAL</th>
                 <th style="text-align: center; width: 20%; height:25px">PESO BRUTO</th>
                 <th style="text-align: center; width: 20%; height:25px">HUMEDAD %</th>
-                <th style="text-align: center; width: 20%; height:25px">PESO NETO</th>
-                <th style="text-align: center; width: 20%; height:25px">LOTE</th>
+                <th style="text-align: center; width: 10%; height:25px">PESO NETO</th>
+                <th style="text-align: center; width: 10%; height:25px">LOTE</th>
             </tr>
-        </thead><tbody>
+        </thead>
+        <tbody>
             <tr>
                 <td style="text-align: center; height:25px">{{$forms->typeMineral->name}}</td>
                 <td style="text-align: center; height:25px">{{$forms->leyMineral}} %</td>
