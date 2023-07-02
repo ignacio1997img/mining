@@ -112,7 +112,7 @@ class Form101Controller extends Controller
 
  
 
-        // return view('form101.prinf', compact('forms'));
+        // return view('form101.prinf', compact('forms', 'qr'));
 
         // view()->share('forms', $forms);
         // $pdf = PDF::loadView('form101.prinf',compact('forms'));

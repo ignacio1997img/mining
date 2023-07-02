@@ -4,7 +4,7 @@
 
 @section('content')
 {{-- <div class="descarga" style="width: 90%; margin: auto;"> <a href="javascript:generateHTML2PDF()">DESCARGAR FORMULARIO</a></div> --}}
-<div id="html2pdf">
+<div >
     {{-- <div class="watermark1" id="watermark1">
         <img src="{{ asset('images/icon.png') }}" /> 
     </div> --}}
@@ -183,13 +183,13 @@
 
 @section('css')
     <style>
-        table, th, td {
+        /* table, th, td {
             border-collapse: collapse;
         }
           
         table.print-friendly tr td, table.print-friendly tr th {
             page-break-inside: avoid;
-        }
+        } */
 
         /* #watermark1 {
             width: 38%;
