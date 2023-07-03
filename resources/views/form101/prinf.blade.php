@@ -11,7 +11,7 @@
     
     <table width="100%">
         <tr>
-            <td style="width: 20%"><img src="{{ asset('images/icon.png') }}" alt="GADBENI" width="70px"></td>
+            <td style="width: 20%"><img src="{{ asset('images/mining.jpeg') }}" alt="GADBENI" width="70px"></td>
             <td style="text-align: center;  width:60%">
                 <h3 style="margin-bottom: 0px; margin-top: 5px">
                     GOBIERNO AUTONOMO DEPARTAMENTAL DEL BENI<br>
