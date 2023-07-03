@@ -101,7 +101,7 @@
         <thead>
             <tr>
                 <th style="text-align: center; height:25px">MUNICIPIO</th>
-                <th style="text-align: center; height:25px">LOCALIDAD/COMUNIDAD</th>
+                <th style="text-align: center; height:25px">LOCALIDAD / COMUNIDAD</th>
                 <th style="text-align: center; height:25px">CODIGO DE AREA MINERA</th>
                 <th style="text-align: center; height:25px">NOMBRE DE AREA MINERA</th>
             </tr>
@@ -122,8 +122,8 @@
             <tr>
                 <th style="text-align: center; width: 25%; height:25px">MEDIO DE TRANSPORTE</th>
                 <th style="text-align: center; width: 25%; height:25px">ORIGEN</th>
-                <th style="text-align: center; width: 25%; height:25px">INTERMEDIO FINAL</th>
-                <th style="text-align: center; width: 25%; height:25px">PLACA/MATRICULA</th>
+                <th style="text-align: center; width: 25%; height:25px">INTERMEDIO / FINAL</th>
+                <th style="text-align: center; width: 25%; height:25px">PLACA / MATRICULA</th>
             </tr>
         </thead>
         <tbody>
