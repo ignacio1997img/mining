@@ -1,6 +1,6 @@
 @extends('layouts.template-print-alt')
 
-@section('page_title', 'Certificado')
+@section('page_title', 'Formulario 101')
 
 @section('content')
 {{-- <div class="descarga" style="width: 90%; margin: auto;"> <a href="javascript:generateHTML2PDF()">DESCARGAR FORMULARIO</a></div> --}}
