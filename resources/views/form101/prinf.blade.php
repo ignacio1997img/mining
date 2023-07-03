@@ -159,7 +159,7 @@
                 <th style="text-align: center;width: 25%; height:150px"></th>
                 <th style="text-align: center;width: 25%; height:150px"></th>
                 <th style="text-align: center;width: 25%; height:150px"></th>
-                <th rowspan="2" style="text-align: center;width: 25%; height:150px"><b style="color: rgb(160, 148, 148)">SELLO DE LA <br>S.D.M.E.H.B.</b></th>
+                <th rowspan="2" style="text-align: center;width: 25%; height:150px"><b style="color: rgb(160, 148, 148)">SELLO DE LA <br>S.D.M.E.H.</b></th>
             </tr>
             <tr>
                 <th style="text-align: center; height:25px">SELLO DE LA EMPRESA</th>
