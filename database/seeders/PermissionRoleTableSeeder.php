@@ -26,8 +26,19 @@ class PermissionRoleTableSeeder extends Seeder
         );
 
 
-        //############## Gerente ####################
+        //############## funcionario ####################
         $role = Role::where('name', 'funcionario')->firstOrFail();
+        $permissions = Permission::whereRaw('table_name = "admin" or
+                                            table_name = "signatures" or
+                                            table_name = "companies" or
+                                            table_name = "certificates" or
+                                            
+                                            `key` = "browse_clear-cache"')->get();
+        $role->permissions()->sync($permissions->pluck('id')->all());
+
+
+        // Permiso para generar los formularios
+        $role = Role::where('name', 'formulario')->firstOrFail();
         $permissions = Permission::whereRaw('table_name = "admin" or
                                             table_name = "signatures" or
                                             table_name = "companies" or

@@ -70,6 +70,7 @@ class PermissionsTableSeeder extends Seeder
             'add_companies',
             'edit_companies',
             'read_companies',
+            'delete_companies',
             
         ];
 

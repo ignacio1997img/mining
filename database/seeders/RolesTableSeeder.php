@@ -25,5 +25,12 @@ class RolesTableSeeder extends Seeder
                 'display_name' => 'Funcionario',
             ])->save();
         }
+
+        $role = Role::firstOrNew(['name' => 'formulario']);
+        if (!$role->exists) {
+            $role->fill([
+                'display_name' => 'Formulario 101',
+            ])->save();
+        }
     }
 }

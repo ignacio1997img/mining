@@ -210,7 +210,7 @@
                     quietMillis: 250,
                     minimumInputLength: 2,
                     ajax: {
-                        url: "{{ url('admin/companies/ajax/list') }}",        
+                        url: "{{ url('admin/companies/certificate/list') }}",        
                         processResults: function (data) {
                             let results = [];
                             data.map(data =>{

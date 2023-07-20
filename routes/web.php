@@ -30,7 +30,11 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('certificates', CertificateController::class);
 
 
-    Route::get('companies/ajax/list', [CompanyController::class, 'ajaxCompany']);//para obtener las personas o clientes para darles u prestamos
+    Route::get('companies', [CompanyController::class, 'index'])->name('voyager.companies.index');
+    Route::get('companies/create', [CompanyController::class, 'create'])->name('companies.create');
+    Route::post('companies/store', [CompanyController::class, 'store'])->name('companies.store');
+    // Route::resource('companies', CompanyController::class);
+    Route::get('companies/certificate/list', [CompanyController::class, 'ajaxCompany']);//para obtener las personas o clientes para darles u prestamos
 
 
     Route::get('ajax/certificates/code/{code?}', [AjaxController::class, 'code'])->name('ajax-certificate.code');
