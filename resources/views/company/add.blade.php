@@ -43,7 +43,7 @@
 
                                     <div class="form-group col-md-3">
                                         <small>Código Operador Minero</small>
-                                        <input type="text" name="municipeMiningOperator" id="municipeMiningOperator" class="form-control text" required>
+                                        <input type="text" name="codeMiningOperator" id="codeMiningOperator" class="form-control text" required>
 
                                     </div>                      
                                 </div>
@@ -77,7 +77,12 @@
                                     <div class="form-group col-md-3">
                                         <small>Municipio Productor</small>
                                         <input type="text" name="municipe" id="municipe" class="form-control text" required>
-                                    </div>                    
+                                    </div>     
+                                    <div class="form-group col-md-3">
+                                        <small>Código Municipio Minero</small>
+                                        <input type="text" name="municipeMiningOperator" id="municipeMiningOperator" class="form-control text" required>
+
+                                    </div>                
                                 </div>
                                 <hr>
                                 <h6 class="panel-title">Detalle del Usuario</h6>

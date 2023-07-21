@@ -16,6 +16,7 @@ class Company extends Model
         'razon',
         'activity',
         'nim',
+        'codeMiningOperator',
         'representative',
         'ci',
         'phone',

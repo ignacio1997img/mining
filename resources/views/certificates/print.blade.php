@@ -41,7 +41,7 @@
         <tr>
             <td style="text-align: center;  width:100%">
                 <h1 style="margin-bottom: 0px; margin-top: 5px; font-size: 30px">
-                    {{$certificate->company->municipeMiningOperator}}
+                    {{$certificate->company->codeMiningOperator}}
                 </h1>
             </td>
         </tr>
