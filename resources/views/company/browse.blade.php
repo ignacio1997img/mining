@@ -1,6 +1,6 @@
 @extends('voyager::master')
 
-@section('page_title', 'Viendo Ingresos')
+@section('page_title', 'Viendo Empresas')
 
 {{-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/solid.css"> --}}
 @if(auth()->user()->hasPermission('browse_form101s'))

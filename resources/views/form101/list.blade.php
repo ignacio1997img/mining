@@ -1,6 +1,6 @@
 <div class="col-md-12">
     <div class="table-responsive">
-        <table id="dataStyle" class="table table-bordered table-hover">
+        <table id="dataTable" class="table table-bordered table-hover">
             <thead>
                 <tr>                    
                     <th style="text-align: center">Codigo</th>

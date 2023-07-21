@@ -38,7 +38,7 @@
                             <div class="row" id="div-results" style="min-height: 120px">
                                 <div class="col-md-12">
                                     <div class="table-responsive">
-                                        <table id="dataStyle" class="table table-bordered table-hover">
+                                        <table id="dataTable" class="table table-bordered table-hover">
                                             <thead>
                                                 <tr>
                                                     <th>Id</th>
@@ -128,7 +128,7 @@
     @section('javascript')
         <script>
             $(document).ready(() => {
-                $('#dataStyle').DataTable({
+                $('#dataTable').DataTable({
                     language: {
                         // "order": [[ 0, "desc" ]],
                         sProcessing: "Procesando...",

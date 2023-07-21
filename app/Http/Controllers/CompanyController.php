@@ -33,11 +33,14 @@ class CompanyController extends Controller
         DB::beginTransaction();
         try {
             $ok = Company::where('nit', $request->nit)->where('deleted_at', null)->first();
+            // return $request;
+
             if($ok)
             {
                 return redirect()->route('companies.index')->with(['message' => 'Ya existe una empresa con el Nit registrada', 'alert-type' => 'error']);
             }
 
+            // return 1;
             $ok = User::where('email', $request->email)->first();
             if($ok)
             {
@@ -45,7 +48,9 @@ class CompanyController extends Controller
             }
             $request->merge(['registerUser_id'=>Auth::user()->id]);
 
+            // return $request;
             $company = Company::create($request->all());
+            // return $company;
 
             User::create([
                 'company_id'=>$company->id,
@@ -68,8 +73,8 @@ class CompanyController extends Controller
 
         } catch (\Throwable $th) {
             DB::rollBack();
-            return 0;    
-            return redirect()->route('companies.create')->with(['message' => 'Ocurrió un error.', 'alert-type' => 'error']);
+            // return 0;    
+            return redirect()->route('companies.index')->with(['message' => 'Ocurrió un error.', 'alert-type' => 'error']);
         }
     }
 
