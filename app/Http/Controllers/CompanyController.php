@@ -12,10 +12,10 @@ use Illuminate\Support\Facades\Http;
 
 class CompanyController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
@@ -33,14 +33,10 @@ class CompanyController extends Controller
         DB::beginTransaction();
         try {
             $ok = Company::where('nit', $request->nit)->where('deleted_at', null)->first();
-            // return $request;
-
             if($ok)
             {
                 return redirect()->route('voyager.companies.index')->with(['message' => 'Ya existe una empresa con el Nit registrada', 'alert-type' => 'error']);
             }
-
-            // return 1;
             $ok = User::where('email', $request->email)->first();
             if($ok)
             {
