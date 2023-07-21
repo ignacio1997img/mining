@@ -37,14 +37,14 @@ class CompanyController extends Controller
 
             if($ok)
             {
-                return redirect()->route('companies.index')->with(['message' => 'Ya existe una empresa con el Nit registrada', 'alert-type' => 'error']);
+                return redirect()->route('voyager.companies.index')->with(['message' => 'Ya existe una empresa con el Nit registrada', 'alert-type' => 'error']);
             }
 
             // return 1;
             $ok = User::where('email', $request->email)->first();
             if($ok)
             {
-                return redirect()->route('companies.index')->with(['message' => 'El Correo ingresado ya se encuentra en uso', 'alert-type' => 'error']);
+                return redirect()->route('voyager.companies.index')->with(['message' => 'El Correo ingresado ya se encuentra en uso', 'alert-type' => 'error']);
             }
             $request->merge(['registerUser_id'=>Auth::user()->id]);
 
@@ -69,12 +69,12 @@ class CompanyController extends Controller
             // Http::get('https://whatsapp-api.beni.gob.bo/?number=591'.$certificate->company->phone.'&message=Puede enviar con un  "ok" o un "si" para confirmar el mensaje gracias');
             // return 1;
             DB::commit();
-            return redirect()->route('companies.index')->with(['message' => 'Registrado exitosamente.', 'alert-type' => 'success']);
+            return redirect()->route('voyager.companies.index')->with(['message' => 'Registrado exitosamente.', 'alert-type' => 'success']);
 
         } catch (\Throwable $th) {
             DB::rollBack();
             // return 0;    
-            return redirect()->route('companies.index')->with(['message' => 'Ocurrió un error.', 'alert-type' => 'error']);
+            return redirect()->route('voyager.companies.index')->with(['message' => 'Ocurrió un error.', 'alert-type' => 'error']);
         }
     }
 
